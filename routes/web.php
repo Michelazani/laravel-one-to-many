@@ -17,7 +17,7 @@ use App\Http\Controllers\Admin\PortfolioController as AdminPortfolioController;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('admin.dashboard');
 
 Route::middleware('auth')
     ->name('admin.')

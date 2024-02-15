@@ -20,6 +20,7 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
+                <th scope="col">Type</th>
                 <th scope="col">Project</th>
                 <th scope="col">Author</th>
                 <th scope="col">Description</th>
@@ -32,6 +33,10 @@
                     <th scope="row">
                         {{ $portfolio->id }}
                     </th>
+                {{-- MODIFICO DATI ALL'INTERNO DEL TYPE_ID IN MODO DA VISUALIZZARE IL NAME!!!!!! --}}
+                <td>
+                        {{ $portfolio->type->name}}
+                    </td>
                 <td>
                 <a href="{{ route('admin.portfolios.show', $portfolio) }}">
                     {{ $portfolio->Project }}
@@ -41,7 +46,8 @@
                     {{ $portfolio->Author }}
                 </td>
                 <td>
-                    {{ $portfolio->Description }}
+                    {{-- mi permette di scegliere la lunghezza massima che voglio inserire in questa casella --}}
+                    {{ substr($portfolio->Description, 0,20)}}
                 </td>
                 <td>
                     <a href="{{ route('admin.portfolios.show', $portfolio) }}" class="text-decoration-none">

@@ -13,4 +13,8 @@ class Portfolio extends Model
         'author',
         'description',
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    } 
 }
