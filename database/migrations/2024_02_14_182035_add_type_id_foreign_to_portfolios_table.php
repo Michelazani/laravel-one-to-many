@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('portfolios', function (Blueprint $table) {
             $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('portfolios') ;
+            $table->foreign('type_id')->references('id')->on('types') ;
         });
     }
 

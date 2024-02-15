@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             <h2>
                 Welcome to your portfolio, {{ Auth::user()->name }}
             </h2>
@@ -33,30 +33,30 @@
                     <th scope="row">
                         {{ $portfolio->id }}
                     </th>
-                {{-- MODIFICO DATI ALL'INTERNO DEL TYPE_ID IN MODO DA VISUALIZZARE IL NAME!!!!!! --}}
                 <td>
-                        {{ $portfolio->type->name}}
-                    </td>
+                    <a href="{{ route('admin.portfolios.show', $portfolio) }}">
+                        {{ $portfolio->Project }}
+                    </a>
+                </td>
+                {{-- MODIFICO DATI ALL'INTERNO DEL TYPE_ID IN MODO DA VISUALIZZARE IL CONTENUTO CHE MI INTERESSA --}}
                 <td>
-                <a href="{{ route('admin.portfolios.show', $portfolio) }}">
-                    {{ $portfolio->Project }}
-                </a>
+                    {{ $portfolio->type->name}}
                 </td>
                 <td>
                     {{ $portfolio->Author }}
                 </td>
                 <td>
                     {{-- mi permette di scegliere la lunghezza massima che voglio inserire in questa casella --}}
-                    {{ substr($portfolio->Description, 0,20)}}
+                     {{ substr($portfolio->Description, 0,20)}}
                 </td>
-                <td>
+                <td class="d-inline-flex">
                     <a href="{{ route('admin.portfolios.show', $portfolio) }}" class="text-decoration-none">
-                        <button class="btn btn-sm btn-primary">
+                        <button class="btn btn-sm btn-primary me-3">
                             View
                         </button>
                     </a>
                     <a href="{{ route('admin.portfolios.edit', $portfolio) }}" class="text-decoration-none">
-                        <button class="btn btn-sm btn-success">
+                        <button class="btn btn-sm btn-success me-3">
                             Edit
                         </button>
                     </a>

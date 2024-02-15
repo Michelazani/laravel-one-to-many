@@ -17,6 +17,17 @@
                     <label for="project" class="input-group-text">Name of the project you'd like to edit:</label>
                     <input class="form-control" type="text" name="project" id="project" value="{{ old('Project', $portfolio->Project) }}">
                 </div>
+                <div class="mb-3 input-group">
+                    <label for="category_id" class="input-group-text">Type:</label>
+                    <select class="form-select" type="text" name="category_id" id="category_id" >
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}"
+                                {{ $type->id == old('type_id', $type->type_id) ? 'selected' : '' }}>
+                                    {{ $type->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="mb-3 input-group">
                     <label for="author" class="input-group-text">Author of the project:</label>

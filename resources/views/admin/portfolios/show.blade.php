@@ -10,28 +10,35 @@
                 {{ $portfolio->Project }}
             </h2>
         </div>
-        <div class="col-12 mx-auto text-center">
+        <div class="col-5 mx-auto ">
             <h2 scope="row">
                 {{ $portfolio->id }}
             </h2>
             <p>
-                {{ $portfolio->Author }}
+                <b>Type:</b> {{ $portfolio->type->name}}
+
             </p>
             <p>
-                {{ $portfolio->Description }}
+                <b>Author:</b> {{ $portfolio->Author }}
             </p>
-            <a href="{{ route('admin.portfolios.edit', $portfolio) }}" class="text-decoration-none">
-                <button class="btn btn-sm btn-success">
-                    Edit
-                </button>
-            </a>
-            <form action="{{ route('admin.portfolios.destroy', $portfolio) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-warning btn-sm d-inline-block" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $portfolio->id }}">
-                    Delete
-               </button>
-            </form>
+            <p>
+                <b>Brief description of the Project:</b> <br>  {{ $portfolio->Description }}
+            </p>
+            <div class="d-inline-flex">
+                <a href="{{ route('admin.portfolios.edit', $portfolio) }}" class="text-decoration-none">
+                    <button class="btn btn-sm btn-success me-3">
+                        Edit
+                    </button>
+                </a>
+                <form action="{{ route('admin.portfolios.destroy', $portfolio) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-warning btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $portfolio->id }}">
+                        Delete
+                   </button>
+                </form>
+
+            </div>
         </div>
     </div>
 </div>

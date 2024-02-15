@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Portfolio;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -40,6 +41,8 @@ class PortfolioSeeder extends Seeder
             )
             );
 
+            $typesId=Type::all()->pluck('id');
+            
             foreach ($portfolios as $portfolio) {
                 $newPortfolio = new Portfolio();
                 $newPortfolio-> type_id=$portfolio['type_id'];
