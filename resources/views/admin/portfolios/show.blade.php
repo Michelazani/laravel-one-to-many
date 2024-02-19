@@ -16,7 +16,6 @@
             </h2>
             <p>
                 <b>Type:</b> {{ $portfolio->type->name}}
-
             </p>
             <p>
                 <b>Author:</b> {{ $portfolio->Author }}
@@ -35,7 +34,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-warning btn-sm " data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $portfolio->id }}">
                         Delete
-                   </button>
+                    </button>
                 </form>
 
             </div>

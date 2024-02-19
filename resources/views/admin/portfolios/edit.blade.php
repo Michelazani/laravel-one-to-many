@@ -6,11 +6,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-7">
-           
-           @include('layouts.partials.errors')
+        @include('layouts.partials.errors')
 
-            <form action="{{ route('admin.portfolios.store') }}" method="POST">
+            <form action="{{ route('admin.portfolios.update', $portfolio) }}" method="POST">
                 @csrf
+                @method('PUT')
 
                 <h2 class="m-4">Edit the project:</h2>
                 <div class="mb-3 input-group">

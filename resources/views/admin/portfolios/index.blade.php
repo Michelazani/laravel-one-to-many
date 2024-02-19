@@ -47,7 +47,7 @@
                 </td>
                 <td>
                     {{-- mi permette di scegliere la lunghezza massima che voglio inserire in questa casella --}}
-                     {{ substr($portfolio->Description, 0,20)}}
+                    {{ substr($portfolio->Description, 0,20)}}
                 </td>
                 <td class="d-inline-flex">
                     <a href="{{ route('admin.portfolios.show', $portfolio) }}" class="text-decoration-none">
@@ -65,7 +65,7 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-warning btn-sm d-inline-block" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $portfolio->id }}">
                             Delete
-                       </button>
+                        </button>
                     </form>
                     @endforeach
 @endsection

@@ -32,11 +32,7 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'Project'=>['required', 'min:3', 'string', 'max:150'],
-            'Author'=>['required','min:3', 'string', 'max:50'],
-            'Description'=>['required', 'min:3', 'string', 'max:250']
-        ]);
+        $data = $request->all();
         $portfolio = Portfolio::create($data);
         return redirect()->route('admin.portfolios.show', $portfolio);
     }
