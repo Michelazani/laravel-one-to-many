@@ -42,7 +42,9 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
-        return view('admin.portfolios.show',compact('portfolio') );
+        $types= Type::all();
+
+        return view('admin.portfolios.show',compact('portfolio', 'types') );
     }
 
     /**
