@@ -14,8 +14,9 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $types= Type::all();
         $portfolios=Portfolio::all();
-        return view('admin.portfolios.index', compact('portfolios'));
+        return view('admin.portfolios.index', compact('portfolios', 'types'));
     }
 
     /**
@@ -33,6 +34,7 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        
         $portfolio = Portfolio::create($data);
         return redirect()->route('admin.portfolios.show', $portfolio);
     }
@@ -43,7 +45,6 @@ class PortfolioController extends Controller
     public function show(Portfolio $portfolio)
     {
         $types= Type::all();
-
         return view('admin.portfolios.show',compact('portfolio', 'types') );
     }
 

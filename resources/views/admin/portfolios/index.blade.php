@@ -40,7 +40,7 @@
                 </td>
                 {{-- MODIFICO DATI ALL'INTERNO DEL TYPE_ID IN MODO DA VISUALIZZARE IL CONTENUTO CHE MI INTERESSA --}}
                 <td>
-                    {{ $portfolio->type->name}}
+                    {{ $portfolio->type->name }}
                 </td>
                 <td>
                     {{ $portfolio->Author }}

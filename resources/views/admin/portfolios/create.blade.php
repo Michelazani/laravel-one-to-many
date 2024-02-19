@@ -18,8 +18,8 @@
                     <input class="form-control" type="text" name="project" id="project" value="{{ old('Project') }}">
                 </div>
                 <div class="mb-3 input-group">
-                    <label for="category_id" class="input-group-text">Type:</label>
-                    <select class="form-select" type="text" name="category_id" id="category_id" >
+                    <label for="type_id" class="input-group-text">Type:</label>
+                    <select class="form-select" type="text" name="type_id" id="type_id" >
                         @foreach ($types as $type)
                             <option value="{{ $type->id }}"
                                 {{ $type->id == old('type_id', $type->type_id) ? 'selected' : '' }}>

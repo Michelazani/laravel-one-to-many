@@ -22,7 +22,7 @@ class TypeSeeder extends Seeder
         
         foreach ($types as $singleType) {
             $type = new Type();
-            $type->name= $singleType;
+            $type->name= $singleType ;
             $type->color = $faker->hexColor();
             $type->save();
 

@@ -19,3 +19,4 @@ class Type extends Model
         return $this-> hasMany(Portfolio::class);
     }
 }
+

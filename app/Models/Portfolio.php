@@ -12,6 +12,7 @@ class Portfolio extends Model
         'project',
         'author',
         'description',
+        'type_id'
     ];
 
     public function type(){
